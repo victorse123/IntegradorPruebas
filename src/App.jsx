@@ -40,7 +40,7 @@ function App() {
   
    useEffect(() => {
     !access && navigate('/');
-  }, [access]);
+  }, [access, navigate]);
 
 
    function onSearch(id) {
@@ -71,7 +71,7 @@ const onClose = (id) => {
             
          <Route path={PATHROUTES.LOGIN} element={<Form login={login} />} />
          <Route path={PATHROUTES.HOME} element={<Home characters={characters} onClose={onClose} />}/>
-         {/*<Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />} /> */}
+         <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />} />
          <Route path={PATHROUTES.ABOUT} element={<About/>} />
          <Route path={PATHROUTES.DETAIL} element={<Detail />} />
         </Routes>

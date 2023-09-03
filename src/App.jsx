@@ -4,7 +4,7 @@ import axios from 'axios';
 
 //components
 import Home from './components/Home/Home';
-import Cards from './components/Cards/Cards.jsx';
+//import Cards from './components/Cards/Cards.jsx';
 import NavBar from './components/NavBar/NavBar.jsx';
 import About from "./components/About/About.jsx";
 import Form from "./components/Form/Form.jsx";
@@ -25,7 +25,7 @@ function App() {
    const [access, setAccess] = useState(false);
    const EMAIL = "victorseva123@gmail.com";
    const PASSWORD = "123Abc";
- 
+
 
 
 
@@ -71,7 +71,7 @@ const onClose = (id) => {
             
          <Route path={PATHROUTES.LOGIN} element={<Form login={login} />} />
          <Route path={PATHROUTES.HOME} element={<Home characters={characters} onClose={onClose} />}/>
-         <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />} />
+         {/*<Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/> */}
          <Route path={PATHROUTES.ABOUT} element={<About/>} />
          <Route path={PATHROUTES.DETAIL} element={<Detail />} />
         </Routes>

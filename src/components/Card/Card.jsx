@@ -1,13 +1,12 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 import { addFav, removeFav } from "../../Redux/Actions";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 function Card (props) {
-  const { id, name, status, species, gender, origin, image, onClose, addFav, removeFav } = props;
+  const { id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites } = props;
 
   const [isFav, setIsFav]= useState(false)
   
@@ -15,6 +14,15 @@ function Card (props) {
     isFav ? removeFav(id) : addFav(props)
     setIsFav(!isFav)
   }
+  
+  useEffect(() => {
+    myFavorites.forEach((fav) => {
+       if (fav.id === props.id) {
+          setIsFav(true);
+       }
+    });
+ }, [myFavorites]);
+
 
   return (
     <div className={styles.wrapperCard}>{
@@ -30,7 +38,7 @@ function Card (props) {
           onClose(id);
         }}
       >
-        Delete
+        X
       </button>
       <img src={image} alt="character" />
       <div className={styles.wrapperText}>
@@ -58,4 +66,12 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default connect(null, mapDispatchToProps)(Card);
+
+const mapStateToProps = (state) => {
+  return {
+    myFavorites: state.myFavorites
+  };
+ 
+}
+
+export default connect (mapStateToProps, mapDispatchToProps)(Card);

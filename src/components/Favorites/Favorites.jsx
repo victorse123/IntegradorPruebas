@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 const Favorites = (props) => {
     const {myFavorites} = props;
 
-    console.log("Estado de myFavorites:", myFavorites);
+    
     
   return (
     <div className={styles.fav}>

@@ -11,14 +11,14 @@ function Card (props) {
   const [isFav, setIsFav]= useState(false)
   
   const handleFavorite = () => {
-    isFav ? removeFav(id) : addFav(props)
-    setIsFav(!isFav)
+    isFav ? removeFav(id) : addFav(props);
+    setIsFav(!isFav);
   }
   
   useEffect(() => {
     myFavorites.forEach((fav) => {
-       if (fav.id === props.id) {
-          setIsFav(true);
+      if (fav.id === props.id) {
+      setIsFav(true);
        }
     });
  }, [myFavorites]);
@@ -30,7 +30,7 @@ function Card (props) {
          <button onClick={handleFavorite}>❤️</button>
       ) : (
          <button onClick={handleFavorite}>🤍</button>
-      )
+      ) 
    }
       <button 
         className={styles.btn} 

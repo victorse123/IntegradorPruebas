@@ -27,7 +27,7 @@ const rootReducer = (state = initialState, {type, payload}) => {
            
            case "FILTER":
            let copy3 = state.allCharacters.filter((char) => {
-               return char.gender === payload 
+               return char.gender == payload 
            })
            return{
             ...state,

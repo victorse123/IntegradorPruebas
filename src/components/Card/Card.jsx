@@ -31,7 +31,7 @@ function Card (props) {
       ) : (
          <button onClick={handleFavorite}>🤍</button>
       ) 
-   }
+    }
       <button 
         className={styles.btn} 
         onClick={()=> {

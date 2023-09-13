@@ -17,7 +17,7 @@ import Detail from "./components/Detail/Detail.jsx";
 import PATHROUTES from "./helpers/PathRoutes.helper.js";
 
 //styles
-import './App.css';
+import styles from './App.css';
 import Favorites from './components/Favorites/Favorites';
 
 function App() {
@@ -64,23 +64,22 @@ const onClose = (id) => {
   }
 
    return (
+      <><div className={styles.active}></div>
       <div className='App'>
-         {
-            pathname !=='/' && <NavBar onSearch={onSearch}/>
-         }
-         
+         {pathname !== '/' && <NavBar onSearch={onSearch} />}
+
          <Routes>
 
-         <Route path={PATHROUTES.LOGIN} element={<Form login={login} />}/>
-         <Route path={PATHROUTES.HOME} element={<Home characters={characters} onClose={onClose} />}/>
-         {/* <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/> */}
-         <Route path={PATHROUTES.ABOUT} element={<About/>}/>
-         <Route path={PATHROUTES.DETAIL} element={<Detail />}/>
-         <Route path={PATHROUTES.FAVORITES} element={<Favorites />}/>
+            <Route path={PATHROUTES.LOGIN} element={<Form login={login} />} />
+            <Route path={PATHROUTES.HOME} element={<Home characters={characters} onClose={onClose} />} />
+            {/* <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/> */}
+            <Route path={PATHROUTES.ABOUT} element={<About />} />
+            <Route path={PATHROUTES.DETAIL} element={<Detail />} />
+            <Route path={PATHROUTES.FAVORITES} element={<Favorites />} />
 
-        </Routes>
-        
-      </div>
+         </Routes>
+
+      </div></>
    );
 }
 

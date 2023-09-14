@@ -1,5 +1,5 @@
 .wrapperCard {
-    position: absolute;
+    position: relative;
     --card-height: 260px;
     --card-width: calc(var(--card-height)/1.27);
     --card-height2: 150px;

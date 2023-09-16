@@ -13,10 +13,10 @@ const NavBar = (props) => {
       <Link to={PATHROUTES.HOME}>Home</Link>
       <Link to={PATHROUTES.ABOUT}>About</Link>
       <Link to={PATHROUTES.FAVORITES}>Favorites</Link>
-      <SearchBar onSearch={onSearch} />
     </div>
-    <div>
-      </div></>
+    <div className={styles.navi}>
+    <SearchBar onSearch={onSearch} />
+    </div></>
   )
 }
 

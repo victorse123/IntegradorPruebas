@@ -32,11 +32,12 @@ const Favorites = (props) => {
           <option value="Genderless">Genderless</option>
           <option value="unknown">Unknown</option>
         </select>
+        
       </div>
-         {myFavorites.map((char) => {
+         {myFavorites.map((char, index) => {
             return(
               <Card
-                key={char.id}
+                key={index}
                 id={char.id}
                 name={char.name}
                 status={char.status}

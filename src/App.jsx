@@ -63,6 +63,8 @@ const onClose = (id) => {
    )
   }
 
+
+
    return (
       <><div className={styles.active}></div>
       <div className='App'>
@@ -74,7 +76,7 @@ const onClose = (id) => {
             <Route path={PATHROUTES.HOME} element={<Home characters={characters} onClose={onClose} />} />
             {/* <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/> */}
             <Route path={PATHROUTES.ABOUT} element={<About />} />
-            <Route path={PATHROUTES.DETAIL} element={<Detail />} />
+            <Route path={PATHROUTES.DETAIL} element={<Detail onClose={onClose}/>} />
             <Route path={PATHROUTES.FAVORITES} element={<Favorites />} />
 
          </Routes>

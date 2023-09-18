@@ -12,6 +12,7 @@ const NavBar = (props) => {
         <Link to={PATHROUTES.HOME}>Home</Link>
         <Link to={PATHROUTES.ABOUT}>About</Link>
         <Link to={PATHROUTES.FAVORITES}>Favorites</Link>
+        <Link to={PATHROUTES.RANDOM}>Random</Link> 
       </div>
       <div className={styles.search}>
         <SearchBar onSearch={onSearch} />

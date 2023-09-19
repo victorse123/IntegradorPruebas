@@ -17,6 +17,9 @@ const NavBar = (props) => {
       <div className={styles.search}>
         <SearchBar onSearch={onSearch} />
       </div>
+      <div className={styles.cer}>
+      <button onClick={""}>Cerrar Sesión</button>
+      </div>
     </div>
   );
 };

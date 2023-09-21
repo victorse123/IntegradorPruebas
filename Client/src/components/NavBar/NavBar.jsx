@@ -18,7 +18,7 @@ const NavBar = (props) => {
         <SearchBar onSearch={onSearch} />
       </div>
       <div className={styles.cer}>
-      <button onClick={""}>Cerrar Sesión</button>
+      <button>Cerrar Sesión</button>
       </div>
     </div>
   );

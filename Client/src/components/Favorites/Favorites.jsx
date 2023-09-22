@@ -32,7 +32,6 @@ const Favorites = (props) => {
           <option value="Genderless">Genderless</option>
           <option value="unknown">Unknown</option>
         </select>
-        
       </div>
          {myFavorites.map((char, index) => {
             return(

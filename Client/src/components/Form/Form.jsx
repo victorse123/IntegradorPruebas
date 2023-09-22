@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState} from 'react'
 import validator from "./validation";
 import styles from "./Form.module.css";
@@ -22,8 +23,13 @@ const Form = (props) => {
 
 
   return (
-    <div>
+    <div className={styles.form}>
       <form onSubmit={handleSubmit}>
+        
+        <div className={styles.portal}>
+        <h1 className={styles.title.bottom}>Rick And Morty</h1>
+      
+        
         {/*USERNAME*/} 
         <div>
           <label htmlFor="email">Email</label>
@@ -46,9 +52,12 @@ const Form = (props) => {
             <p>{errors.p2}</p>
             )
         }
+        <div className={styles.btn}></div>
         </div>
         <button type='submit'>LOGIN</button>
+        </div>
       </form>
+
     </div>
   );
 };

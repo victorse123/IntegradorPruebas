@@ -3,7 +3,7 @@
     src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
   }
 
-  .title {
+.title {
     position: absolute;
     bottom: 0.8em;
     width: 100%;
@@ -94,4 +94,5 @@
     radial-gradient(circle at 79% 59%, transparent 40%, #FFFE9C 37%),
     radial-gradient(circle at 50% 50%, #FDFEB4 100%, #FDFEB4 100%)
     ;
-}
+} 
+

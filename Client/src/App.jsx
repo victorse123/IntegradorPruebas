@@ -26,11 +26,8 @@ function App() {
    const {pathname} = useLocation();
    const navigate = useNavigate();
    const [access, setAccess] = useState(false);
-//   const EMAIL = '';
-//   const PASSWORD = '';
    const [existingCharacterIds, setExistingCharacterIds] = useState(new Set()); 
 
-  
    function login(userData) {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
@@ -40,7 +37,7 @@ function App() {
          access && navigate('/home');
       });
    }
-
+  
    useEffect(() => {
     !access && navigate('/');
   }, [access, navigate]);

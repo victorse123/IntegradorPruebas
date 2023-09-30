@@ -1,8 +1,8 @@
 //const http = require('http');
 //const getCharById = require('./controllers/getCharById');
 //const PORT = 3001;
-
-
+//
+//
 //http
 //    .createServer((req, res) => {
 //        res.setHeader('Access-Control-Allow-Origin', '*');
@@ -19,7 +19,9 @@
 const express = require('express');
 const server = express();
 const PORT = 3001;
+
 const router = require('./routes/index');
+
 
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -39,7 +41,6 @@ server.use(express.json());
 server.use('/rickandmorty', router)
 
 server.listen(PORT, () => {
-    console.log('server raised in port: ' + PORT);
+   console.log('Server raised in port: ' + PORT);
 });
-
 

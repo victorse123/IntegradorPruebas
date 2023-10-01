@@ -67,5 +67,5 @@ async function getCharById  (req, res) {
   }
 }
 
-module.exports = getCharById
+module.exports = getCharById;
 

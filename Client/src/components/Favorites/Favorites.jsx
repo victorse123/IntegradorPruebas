@@ -33,10 +33,10 @@ const Favorites = (props) => {
           <option value="unknown">Unknown</option>
         </select>
       </div>
-         {myFavorites.map((char, index) => {
+         {myFavorites.map((char) => {
             return(
               <Card
-                key={index}
+                key={char.id}
                 id={char.id}
                 name={char.name}
                 status={char.status}

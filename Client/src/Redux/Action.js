@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const REMOVE_FAV = 'REMOVE_FAV'
+
 // export const addFav = (character) => {
 //     const endpoint = 'http://localhost:3001/rickandmorty/fav';
 //     return (dispatch) => {
@@ -45,7 +47,7 @@ export const removeFav = (id) => {
          try {
                const {data} = await axios.delete(endpoint)
                   return dispatch({
-                     type: 'REMOVE_FAV',
+                     type: REMOVE_FAV,
                      payload: data,
                   });
          } catch (error) {

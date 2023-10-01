@@ -9,7 +9,7 @@ import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar.jsx';
 import About from "./components/About/About.jsx";
 import Form from "./components/Form/Form.jsx";
-import Random from "./components/Random/Random.jsx";
+
 
 //Router-Dom
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ import PATHROUTES from "./helpers/PathRoutes.helper.js";
 
 //styles
 import styles from './App.css';
-import Favorites from './components/Favorites/Favorites';
+import Favorites from './components/Favorites/Favorites.jsx';
 
 function App() {
    const [characters, setCharacters]=useState([]);
@@ -105,11 +105,10 @@ const onClose = (id) => {
 
             <Route path={PATHROUTES.LOGIN} element={<Form login={login} />} />
             <Route path={PATHROUTES.HOME} element={<Home characters={characters} onClose={onClose} />} />
-            {/* <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/> */}
             <Route path={PATHROUTES.ABOUT} element={<About />} />
             <Route path={PATHROUTES.DETAIL} element={<Detail onClose={onClose}/>} />
             <Route path={PATHROUTES.FAVORITES} element={<Favorites />} />
-            <Route path={PATHROUTES.RANDOM} element ={<Random />} />
+            
 
          </Routes>
 

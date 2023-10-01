@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Card.module.css";
 import { addFav, removeFav } from "../../Redux/Action";
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 function Card (props) {
-  const { id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites } = props;
+  const { id, name, status, species, gender, image, onClose, addFav, removeFav, myFavorites } = props;
+  const { pathname } = useLocation ()
 
   const [isFav, setIsFav]= useState(false)
   
@@ -31,7 +32,8 @@ function Card (props) {
       ) : (
          <button onClick={handleFavorite}>🤍</button>
       ) 
-    }
+    } 
+    {pathname !== '/favorites' && (
       <button 
         className={styles.btn} 
         onClick={()=> {
@@ -39,7 +41,7 @@ function Card (props) {
         }}
       >
         X
-      </button>
+      </button> )}
       <img src={image} alt="character" />
       <div className={styles.wrapperText}>
         <Link strict to={`/detail/${id}`}>
@@ -49,7 +51,7 @@ function Card (props) {
           <h2>{status}</h2>
           <h2>{species}</h2>
           <h2>{gender}</h2>
-          <h2>{origin}</h2>
+          
         </div>
       </div>
     </div>

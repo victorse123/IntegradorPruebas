@@ -12,6 +12,7 @@ const NavBar = ({ onSearch }) => {
   return (
     <div className={styles.navBar}>
       <div className={styles.nav}>
+      
         <Link to={PATHROUTES.HOME}>Home</Link>
         <Link to={PATHROUTES.ABOUT}>About</Link>
         <Link to={PATHROUTES.FAVORITES}>Favorites</Link>

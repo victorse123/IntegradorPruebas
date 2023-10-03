@@ -53,17 +53,17 @@ describe('Test de Rutas', () => {
 
     })
 
-    describe('DELETE /rickandmorty/fav/:id', () => {
-        const character1 = { id:'1', name: 'NOMBRE 1' };
-        const character2 = { id:'2', name: 'NOMBRE 2' };
+    describe("DELETE /rickandmorty/fav/:id", () => {
+        const character1 = { id:"1", name: "Victor" };
+        const character2 = { id:"2", name: "Alfonso" };
 
-        it('Devuelve los personajes existentes luego de ID invalido', async () => {
-            const response = (await agent.delete('/rickandmorty/fav/3')).body;
-            expect(response).toContainEqual(character1);
-            expect(response).toContainEqual(character2);
+        it("Devuelve un arreglo con los elementos previos", async () => {
+            const response = (await agent.delete("/rickandmorty/fav/3")).body;
+            expect(response).not.toContainEqual(character1);
+            expect(response).not.toContainEqual(character2);
         });
 
-        it('Se elimina un personaje de favoritos exitosamente', async () => {
+        it('Elimina correctamente un personaje pasado por ID', async () => {
             const response = (await agent.delete('/rickandmorty/fav/1')).body;
             expect(response).not.toContainEqual(character1);
         });

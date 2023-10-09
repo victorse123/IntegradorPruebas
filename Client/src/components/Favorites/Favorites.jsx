@@ -12,11 +12,11 @@ const Favorites = (props) => {
     const handleOrder = (e) => {
       dispatch (orderCards(e.target.value));
       setAux(!aux);
-    }
+    };
 
     const handleFilter = (e) => {
       dispatch (filterCards(e.target.value));
-    }
+    };
 
   return (
     <div className={styles.fav}>

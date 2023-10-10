@@ -21,6 +21,7 @@ export const REMOVE_FAV = 'REMOVE_FAV'
          const { data } = await axios.post(endpoint, character);
          return dispatch ({
             type: 'ADD_FAV',
+            
             payload: data,
          });
       } catch (error) {

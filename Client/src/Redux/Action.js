@@ -25,7 +25,7 @@ export const REMOVE_FAV = 'REMOVE_FAV'
             payload: data,
          });
       } catch (error) {
-         console.log(error)
+         console.error("Error while adding to favorites:", error.message);
       }
    };
 };
@@ -48,7 +48,7 @@ export const removeFav = (id) => {
          try {
                const { data } = await axios.delete(endpoint);
                   return dispatch({
-                     type: REMOVE_FAV,
+                     type: 'REMOVE_FAV',
                      payload: data,
                   });
          } catch (error) {

@@ -1,6 +1,10 @@
+/* eslint-disable no-empty */
 import axios from 'axios';
 
-export const REMOVE_FAV = 'REMOVE_FAV'
+export const ADD_FAV = 'ADD_FAV';
+export const REMOVE_FAV = 'REMOVE_FAV';
+export const FILTER = 'FILTER';
+export const ORDER = 'ORDER';
 
 // export const addFav = (character) => {
 //     const endpoint = 'http://localhost:3001/rickandmorty/fav';
@@ -24,9 +28,7 @@ export const REMOVE_FAV = 'REMOVE_FAV'
             
             payload: data,
          });
-      } catch (error) {
-         console.error("Error while adding to favorites:", error.message);
-      }
+      } catch (error) {}
    };
 };
 
@@ -43,7 +45,7 @@ export const REMOVE_FAV = 'REMOVE_FAV'
 //  };
 
 export const removeFav = (id) => {
-      const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
+   const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
       return async (dispatch) => {
          try {
                const { data } = await axios.delete(endpoint);
@@ -51,9 +53,7 @@ export const removeFav = (id) => {
                      type: 'REMOVE_FAV',
                      payload: data,
                   });
-         } catch (error) {
-           console.log(error);
-         }
+         } catch (error) {}
    
       };
 };

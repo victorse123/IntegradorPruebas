@@ -6,13 +6,14 @@ module.exports = (sequelize) => {
          type: DataTypes.INTEGER,
          allorNull: false,
          primaryKey: true,
+         autoIncrement: true,
       },
       email:{
          type: DataTypes.STRING,
          allowNull: false,
          isEmail: true,
       },
-      pasword:{
+      password:{
          type: DataTypes.STRING,
          allowNull: false,
       },

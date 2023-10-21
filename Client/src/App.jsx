@@ -81,7 +81,8 @@ function App() {
       try {
          const { data } = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`)
          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
+            //setCharacters((oldChars) => [...oldChars, data]);
+            setCharacters([...characters, data]);
          } 
       } catch (error) {
          window.alert('¡No se a asignado el id!');

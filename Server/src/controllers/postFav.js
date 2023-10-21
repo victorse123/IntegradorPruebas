@@ -10,7 +10,7 @@ const postFav = async (req, res) => {
     }
 
     await Favorite.findOrCreate({
-        where: {  name, origin, status, image, species, gender }
+        where: { id, name, origin, status, image, species, gender }
     })
 
     const allFavorites = await Favorite.findAll()

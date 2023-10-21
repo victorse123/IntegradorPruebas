@@ -12,7 +12,7 @@ const login = async (req, res) => {
         where: { email: email }
     }) 
 
-    if(!user) return res.staus(404).send('Usuario no encontrado')
+    if(!user) return res.status(404).send('Usuario no encontrado')
 
     if(user.password === password) {
         return res.json({
@@ -27,4 +27,4 @@ const login = async (req, res) => {
   }
 }
 
-module.export = login;
+module.exports = login;

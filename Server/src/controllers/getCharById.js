@@ -49,23 +49,44 @@
 
 // module.exports = { getCharById };
 
+// const axios = require('axios');
+
+// const URL = "https://rickandmortyapi.com/api/character";
+
+// const getCharById = async (req, res) => {
+//   try {
+//       const { id } = req.params;
+//       const { name, gender, species, origin, image, status } = (await axios (URL + id)).data;
+//       const character = { id, name, gender, species, origin, image, status };
+
+//       return character.name
+//         ? res.status(200).json(character)
+//         : res.status(400).send('Not found')
+
+//   } catch (error) { 
+//       return res.status(500).send({error: error.message})
+//   }
+// }
+
+// module.exports = getCharById;
+
 const axios = require('axios');
-const URL = "https://rickandmortyapi.com/api/character/";
+
+const BASE_URL = "https://rickandmortyapi.com/api/character";
 
 const getCharById = async (req, res) => {
   try {
-      const { id } = req.params;
-      const { name, gender, species, origin, image, status } = (await axios (URL + id)).data;
-      const character = { id, name, gender, species, origin, image, status };
+    const { id } = req.params;
+    const response = await axios.get(`${BASE_URL}/${id}`); // Corrección en la URL
+    const { name, gender, species, origin, image, status } = response.data;
+    const character = { id, name, gender, species, origin, image, status };
 
-      return character.name
-        ? res.status(200).json(character)
-        : res.status(400).send('Not found')
-
-  } catch (error) { 
-      return res.status(500).send({error: error.message})
+    return character.name
+      ? res.status(200).json(character)
+      : res.status(404).send('Not found'); // Cambio de estado 400 a 404 para indicar que no se encontró el recurso
+  } catch (error) {
+    return res.status(500).send({ error: error.message });
   }
-}
+};
 
 module.exports = getCharById;
-

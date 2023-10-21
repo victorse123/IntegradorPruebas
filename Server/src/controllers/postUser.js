@@ -19,4 +19,4 @@ const postUser = async (req, res) => {
   }
 }
 
-module.export = postUser;
+module.exports = postUser;

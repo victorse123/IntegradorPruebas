@@ -16,4 +16,4 @@ const deleteFav = async (req, res) => {
   }
 }
 
-module.export = deleteFav;
+module.exports = deleteFav;

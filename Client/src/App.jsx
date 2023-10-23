@@ -10,6 +10,7 @@ import NavBar from './components/NavBar/NavBar.jsx';
 import About from "./components/About/About.jsx";
 import Form from "./components/Form/Form.jsx";
 
+import Favorites from './components/Favorites/Favorites.jsx';
 
 //Router-Dom
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
@@ -19,13 +20,14 @@ import PATHROUTES from "./helpers/PathRoutes.helper.js";
 
 //styles
 import styles from './App.css';
-import Favorites from './components/Favorites/Favorites.jsx';
+
 
 function App() {
    const [characters, setCharacters]=useState([]);
    const {pathname} = useLocation();
    const navigate = useNavigate();
    const [access, setAccess] = useState(false);
+   
    //const [existingCharacterIds, setExistingCharacterIds] = useState(new Set()); 
 
    // function login(userData) {
